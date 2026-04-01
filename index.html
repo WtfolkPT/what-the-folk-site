@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ceramics, Tattoos & Art</title>
+    <title>What the Folk | Ceramics Studio</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
@@ -12,7 +12,6 @@
             --accent-blue: #62b6cb;
             --soft-beige: #fdfaf5;
             --clay-text: #463f3a;
-            --tattoo-dark: #1a1a1a;
         }
 
         * { box-sizing: border-box; scroll-behavior: smooth; }
@@ -39,6 +38,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            /* Updated with your specific image name */
             background: linear-gradient(rgba(27, 73, 101, 0.6), rgba(27, 73, 101, 0.6)), url('Screenshot 2026-04-01 at 19.26.56.jpg') center/cover;
             color: white;
         }
@@ -62,15 +62,6 @@
         .price-tag { font-size: 2rem; font-weight: 600; color: var(--studio-blue); margin: 15px 0; display: block; }
         .features { list-style: none; padding: 0; margin-bottom: 30px; font-size: 0.9rem; color: #666; line-height: 2; }
 
-        /* Vasco's Art Section */
-        .vasco-section { background: var(--tattoo-dark); color: #ccc; padding: 100px 20px; }
-        .vasco-section h2, .vasco-section h3 { color: white; text-align: center; }
-        .gallery-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; display: block; margin-top: 50px; text-align: center; color: var(--accent-blue); }
-        
-        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin: 20px 0 60px; }
-        .portfolio-item { height: 300px; background: #222 center/cover; border-radius: 4px; filter: grayscale(20%); transition: 0.4s; }
-        .portfolio-item:hover { filter: grayscale(0%); }
-        
         /* Contact & Buttons */
         .btn { display: inline-block; padding: 14px 30px; background: var(--studio-blue); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
         .btn:hover { background: var(--accent-blue); }
@@ -78,21 +69,19 @@
 
         .footer-info { background: #fff; padding: 80px 20px; text-align: center; }
         .social-link { color: var(--studio-blue); text-decoration: none; font-weight: 600; margin: 0 10px; border-bottom: 2px solid var(--accent-blue); }
-
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#ceramics">Ceramics</a>
-    <a href="#vasco">Tattoos & Art</a>
+    <a href="#ceramics">Workshops</a>
     <a href="#location">Find Us</a>
     <a href="https://wa.me/351935479009">Book Session</a>
 </nav>
 
 <section class="hero">
     <h1>WHAT THE FOLK</h1>
-    <p>STUDIO • CALDAS DA RAINHA</p>
+    <p>CERAMICS STUDIO • CALDAS DA RAINHA</p>
 </section>
 
 <section class="booking-steps">
@@ -104,14 +93,14 @@
         </div>
         <div class="step">
             <h4>2. Send a Message</h4>
-            <p>Click the WhatsApp button to chat with Afonso or Vasco directly.</p>
+            <p>Click the WhatsApp button to chat with Afonso directly.</p>
         </div>
         <div class="step">
             <h4>3. Get Creative</h4>
             <p>We'll find a date that works for you. All materials included.</p>
         </div>
     </div>
-    <a href="https://wa.me/351935479009" class="btn whatsapp-btn">Message Afonso to Book Ceramics</a>
+    <a href="https://wa.me/351935479009" class="btn whatsapp-btn">Message Afonso to Book</a>
 </section>
 
 <div class="container" id="ceramics">
@@ -160,7 +149,7 @@
             <div class="price-body">
                 <span class="price-tag">€55</span>
                 <p>A private deep-dive into hand-sculpting techniques.</p>
-                <a href="https://wa.me/351935479009" class="btn">Book Solo</a>
+                <a href="https://wa.me/351935479009?text=Hi%20Afonso!%20I'd%20like%20to%20book%20a%20Solo%20Hand-building%20session." class="btn">Book Solo</a>
             </div>
         </div>
         <div class="price-card">
@@ -168,39 +157,11 @@
             <div class="price-body">
                 <span class="price-tag">€45 <small style="font-size: 0.8rem;">/ person</small></span>
                 <p>Maximum 5 people. A relaxed, social way to learn clay.</p>
-                <a href="https://wa.me/351935479009" class="btn">Book Group</a>
+                <a href="https://wa.me/351935479009?text=Hi%20Afonso!%20I'd%20like%20to%20book%20a%20Group%20Hand-building%20session." class="btn">Book Group</a>
             </div>
         </div>
     </div>
 </div>
-
-<section id="vasco" class="vasco-section">
-    <div class="container">
-        <h2>Vasco Mota: Tattoos & Paintings</h2>
-        <p style="text-align: center;">Folk-inspired art and custom tattooing.</p>
-        
-        <span class="gallery-label">Tattoo Portfolio</span>
-        <div class="portfolio-grid">
-            <div class="portfolio-item" style="background-image: url('tattoo1.jpg');"></div>
-            <div class="portfolio-item" style="background-image: url('tattoo2.jpg');"></div>
-            <div class="portfolio-item" style="background-image: url('tattoo3.jpg');"></div>
-        </div>
-
-        <span class="gallery-label">Paintings & Fine Art</span>
-        <div class="portfolio-grid">
-            <div class="portfolio-item" style="background-image: url('paint1.jpg');"></div>
-            <div class="portfolio-item" style="background-image: url('paint2.jpg');"></div>
-            <div class="portfolio-item" style="background-image: url('paint3.jpg');"></div>
-        </div>
-
-        <div style="text-align: center;">
-            <a href="https://wa.me/351917010332" class="btn whatsapp-btn">Message Vasco for Tattoo/Art</a>
-            <p style="margin-top: 20px;">
-                Follow Vasco: <a href="https://instagram.com/ohvasco" class="social-link" style="color:white; border-color:white;">@ohvasco</a>
-            </p>
-        </div>
-    </div>
-</section>
 
 <footer class="footer-info" id="location">
     <h3>Visit the Studio</h3>
