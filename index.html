@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What the Folk | Ceramics & Tattoos</title>
+    <title>What the Folk | Ceramics, Tattoos & Art</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
@@ -23,17 +23,17 @@
         nav {
             padding: 15px;
             text-align: center;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        nav a { text-decoration: none; color: var(--studio-blue); margin: 0 15px; font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+        nav a { text-decoration: none; color: var(--studio-blue); margin: 0 12px; font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
 
         /* Hero */
         .hero {
-            height: 50vh;
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -42,102 +42,52 @@
             background: linear-gradient(rgba(27, 73, 101, 0.6), rgba(27, 73, 101, 0.6)), url('hero.jpg') center/cover;
             color: white;
         }
-        .hero h1 { color: white; font-size: 3.5rem; margin: 0; }
+        .hero h1 { color: white; font-size: clamp(3rem, 8vw, 5rem); margin: 0; }
 
-        /* How to Book Section - NEW CTA POSITION */
-        .booking-steps {
-            background: white;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-        }
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            max-width: 1000px;
-            margin: 30px auto;
-            gap: 20px;
-        }
-        .step { padding: 20px; }
-        .step h4 { margin-bottom: 10px; color: var(--accent-blue); }
-        .main-cta {
-            display: inline-block;
-            padding: 15px 40px;
-            background: var(--studio-blue);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            margin-top: 20px;
-        }
+        /* Booking Process Section */
+        .booking-steps { background: white; padding: 60px 20px; text-align: center; border-bottom: 1px solid #eee; }
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); max-width: 1000px; margin: 40px auto; gap: 30px; }
+        .step h4 { color: var(--accent-blue); font-size: 1.4rem; margin-bottom: 10px; }
 
-        .container { max-width: 1100px; margin: auto; padding: 60px 20px; }
+        .container { max-width: 1100px; margin: auto; padding: 80px 20px; }
         
-        /* Workshop Sections */
-        .category-title { 
-            text-align: center; 
-            margin-bottom: 40px; 
-            font-size: 2.5rem;
-            border-bottom: 1px solid var(--accent-blue);
-            display: inline-block;
-            width: 100%;
-        }
-
-        .workshop-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-        .card:hover { transform: translateY(-5px); }
-        .card-img { height: 200px; background: #eee center/cover; }
-        .card-content { padding: 25px; }
-        .price { color: var(--accent-blue); font-weight: 600; font-size: 1.1rem; }
-
-        /* Vasco's Section */
-        .vasco-section {
-            background: var(--tattoo-dark);
-            color: #e0e0e0;
-            padding: 80px 20px;
-        }
-        .vasco-section h2, .vasco-section h3 { color: white; }
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 30px 0;
-        }
-        .portfolio-item { height: 250px; background: #333; border-radius: 5px; }
+        /* Workshop Pricing Cards */
+        .category-header { text-align: center; margin-bottom: 50px; }
+        .workshop-type-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 60px; }
         
-        .vasco-btn {
-            background: transparent;
-            border: 2px solid white;
-            color: white;
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
-        }
+        .price-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #f0f0f0; }
+        .price-card:hover { transform: translateY(-5px); }
+        .price-header { background: var(--studio-blue); color: white; padding: 20px; text-align: center; }
+        .price-body { padding: 30px; text-align: center; }
+        .price-tag { font-size: 2rem; font-weight: 600; color: var(--studio-blue); margin: 15px 0; display: block; }
+        .features { list-style: none; padding: 0; margin-bottom: 30px; font-size: 0.9rem; color: #666; line-height: 2; }
 
-        footer { text-align: center; padding: 40px; font-size: 0.8rem; opacity: 0.7; }
+        /* Vasco's Art Section */
+        .vasco-section { background: var(--tattoo-dark); color: #ccc; padding: 100px 20px; }
+        .vasco-section h2, .vasco-section h3 { color: white; text-align: center; }
+        .gallery-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; display: block; margin-top: 50px; text-align: center; color: var(--accent-blue); }
+        
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; margin: 20px 0 60px; }
+        .portfolio-item { height: 300px; background: #222 center/cover; border-radius: 4px; filter: grayscale(20%); transition: 0.4s; }
+        .portfolio-item:hover { filter: grayscale(0%); }
+        
+        /* Contact & Buttons */
+        .btn { display: inline-block; padding: 14px 30px; background: var(--studio-blue); color: white; text-decoration: none; border-radius: 50px; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        .btn:hover { background: var(--accent-blue); }
+        .whatsapp-btn { background: #25D366; } /* WhatsApp Green */
+
+        .footer-info { background: #fff; padding: 80px 20px; text-align: center; }
+        .social-link { color: var(--studio-blue); text-decoration: none; font-weight: 600; margin: 0 10px; border-bottom: 2px solid var(--accent-blue); }
+
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#booking">How to Book</a>
     <a href="#ceramics">Ceramics</a>
     <a href="#vasco">Tattoos & Art</a>
-    <a href="#contact">Contact</a>
+    <a href="#location">Find Us</a>
+    <a href="https://wa.me/351935479009">Book Session</a>
 </nav>
 
 <section class="hero">
@@ -145,63 +95,80 @@
     <p>STUDIO • CALDAS DA RAINHA</p>
 </section>
 
-<section id="booking" class="booking-steps">
-    <h2>Ready to Create?</h2>
-    <p>Booking a session is simple and personal. No automated calendars.</p>
+<section class="booking-steps">
+    <h2>How to join a workshop</h2>
     <div class="steps-grid">
         <div class="step">
-            <h4>1. Choose</h4>
-            <p>Pick a workshop or art style you love below.</p>
+            <h4>1. Pick your Craft</h4>
+            <p>Choose between Wheel Throwing or Hand-building, Solo or Group.</p>
         </div>
         <div class="step">
-            <h4>2. Message</h4>
-            <p>Send a WhatsApp to Afonso (Ceramics) or Vasco (Tattoos).</p>
+            <h4>2. Send a Message</h4>
+            <p>Click the WhatsApp button to chat with Afonso or Vasco directly.</p>
         </div>
         <div class="step">
-            <h4>3. Visit</h4>
-            <p>We'll finalize the date together. See you at the studio!</p>
+            <h4>3. Get Creative</h4>
+            <p>We'll find a date that works for you. All materials included.</p>
         </div>
     </div>
-    <a href="https://wa.me/351912345678" class="main-cta">Message Afonso to Book Ceramics Workshop</a>
+    <a href="https://wa.me/351935479009" class="btn whatsapp-btn">Message Afonso to Book Ceramics</a>
 </section>
 
 <div class="container" id="ceramics">
-    <h2 class="category-title">Wheel Throwing</h2>
-    <div class="workshop-grid">
-        <div class="card">
-            <div class="card-img" style="background-image: url('wheel-1.jpg');"></div>
-            <div class="card-content">
-                <p class="price">From €85</p>
-                <h3>Private Intro Session</h3>
-                <p>1-on-1 focus. Perfect for first-timers to master centering and pulling.</p>
+    <div class="category-header">
+        <h2>Wheel Throwing</h2>
+        <p>Master the potter's wheel in the heart of Caldas da Rainha.</p>
+    </div>
+
+    <div class="workshop-type-grid">
+        <div class="price-card">
+            <div class="price-header"><h3>Solo Session</h3></div>
+            <div class="price-body">
+                <span class="price-tag">€85</span>
+                <ul class="features">
+                    <li>1-on-1 private tuition</li>
+                    <li>Undivided instructor attention</li>
+                    <li>Focus on your specific goals</li>
+                    <li>All materials & firing included</li>
+                </ul>
+                <a href="https://wa.me/351935479009?text=Hi%20Afonso!%20I'd%20like%20to%20book%20a%20Solo%20Wheel%20session." class="btn">Inquire Solo</a>
             </div>
         </div>
-        <div class="card">
-            <div class="card-img" style="background-image: url('wheel-pack.jpg');"></div>
-            <div class="card-content">
-                <p class="price">3 or 5 Session Packs</p>
-                <h3>Skill Mentorship</h3>
-                <p>Designed for those serious about progress and complex forms.</p>
+        <div class="price-card">
+            <div class="price-header"><h3>Group Class</h3></div>
+            <div class="price-body">
+                <span class="price-tag">€65 <small style="font-size: 0.8rem;">/ person</small></span>
+                <ul class="features">
+                    <li>Shared creative energy</li>
+                    <li>Great for friends or couples</li>
+                    <li>Step-by-step group guidance</li>
+                    <li>All materials & firing included</li>
+                </ul>
+                <a href="https://wa.me/351935479009?text=Hi%20Afonso!%20I'd%20like%20to%20book%20a%20Group%20Wheel%20session." class="btn">Inquire Group</a>
             </div>
         </div>
     </div>
 
-    <h2 class="category-title">Handbuilding & Painting</h2>
-    <div class="workshop-grid">
-        <div class="card">
-            <div class="card-img" style="background-image: url('hand-1.jpg');"></div>
-            <div class="card-content">
-                <p class="price">Starting at €35</p>
-                <h3>Small Group Basics</h3>
-                <p>Pinching, coiling, and slab building. Max 3 people for an intimate feel.</p>
+    <div class="category-header" style="margin-top: 100px;">
+        <h2>Hand-building</h2>
+        <p>Pinching, coiling, and slab-building. No wheel needed.</p>
+    </div>
+
+    <div class="workshop-type-grid">
+        <div class="price-card">
+            <div class="price-header"><h3>Solo Hand-building</h3></div>
+            <div class="price-body">
+                <span class="price-tag">€55</span>
+                <p>A private deep-dive into hand-sculpting techniques.</p>
+                <a href="https://wa.me/351935479009" class="btn">Book Solo</a>
             </div>
         </div>
-        <div class="card">
-            <div class="card-img" style="background-image: url('painting.jpg');"></div>
-            <div class="card-content">
-                <p class="price">Inquire for pricing</p>
-                <h3>Painting Classes</h3>
-                <p>Explore color and form on clay or canvas in our dedicated studio space.</p>
+        <div class="price-card">
+            <div class="price-header"><h3>Group Hand-building</h3></div>
+            <div class="price-body">
+                <span class="price-tag">€45 <small style="font-size: 0.8rem;">/ person</small></span>
+                <p>Maximum 5 people. A relaxed, social way to learn clay.</p>
+                <a href="https://wa.me/351935479009" class="btn">Book Group</a>
             </div>
         </div>
     </div>
@@ -209,26 +176,42 @@
 
 <section id="vasco" class="vasco-section">
     <div class="container">
-        <h2>Tattoos & Paintings by Vasco</h2>
-        <p>Discover bold folk-inspired tattoos and original paintings. Vasco works by appointment in our private studio space.</p>
+        <h2>Vasco Mota: Tattoos & Paintings</h2>
+        <p style="text-align: center;">Folk-inspired art and custom tattooing.</p>
         
+        <span class="gallery-label">Tattoo Portfolio</span>
         <div class="portfolio-grid">
-            <div class="portfolio-item" style="background-image: url('tattoo1.jpg'); background-size: cover;"></div>
-            <div class="portfolio-item" style="background-image: url('tattoo2.jpg'); background-size: cover;"></div>
-            <div class="portfolio-item" style="background-image: url('tattoo3.jpg'); background-size: cover;"></div>
-            <div class="portfolio-item" style="background-image: url('tattoo4.jpg'); background-size: cover;"></div>
+            <div class="portfolio-item" style="background-image: url('tattoo1.jpg');"></div>
+            <div class="portfolio-item" style="background-image: url('tattoo2.jpg');"></div>
+            <div class="portfolio-item" style="background-image: url('tattoo3.jpg');"></div>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="https://wa.me/351917010332" class="vasco-btn">Message Vasco to Book your Tattoo</a>
-            <a href="https://instagram.com/whatthefolkstudio" class="vasco-btn">View Full Portfolio</a>
+        <span class="gallery-label">Paintings & Fine Art</span>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" style="background-image: url('paint1.jpg');"></div>
+            <div class="portfolio-item" style="background-image: url('paint2.jpg');"></div>
+            <div class="portfolio-item" style="background-image: url('paint3.jpg');"></div>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="https://wa.me/351917010332" class="btn whatsapp-btn">Message Vasco for Tattoo/Art</a>
+            <p style="margin-top: 20px;">
+                Follow Vasco: <a href="https://instagram.com/ohvasco" class="social-link" style="color:white; border-color:white;">@ohvasco</a>
+            </p>
         </div>
     </div>
 </section>
 
-<footer id="contact">
-    <p>What the Folk Studio | Caldas da Rainha</p>
-    <p>@whatthefolkstudio</p>
+<footer class="footer-info" id="location">
+    <h3>Visit the Studio</h3>
+    <p>Caldas da Rainha, Portugal</p>
+    <a href="https://maps.google.com/?q=Caldas+da+Rainha" target="_blank" class="social-link">Open in Google Maps</a>
+    
+    <div style="margin-top: 40px;">
+        <a href="https://instagram.com/whatthefolkstudio" class="social-link">Instagram</a>
+        <a href="mailto:wtf@what-the-folk.com" class="social-link">Email Us</a>
+    </div>
+    <p style="margin-top: 60px; font-size: 0.7rem; opacity: 0.5;">© 2024 What the Folk Studio</p>
 </footer>
 
 </body>
